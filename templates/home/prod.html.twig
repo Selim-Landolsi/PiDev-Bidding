@@ -1,0 +1,22 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}{% endblock %}
+
+
+{% block body %}
+
+<a class="btn-box" href="{{ path( 'bid_f', {'id': produit.id })}}">Bid</a>
+<a class="btn-box" href="{{ path('bid_buyout', {'id': produit.id }) }}">Buyout</a>
+
+<form action="{{path('app_payment')}}" method="post">
+
+                                            <input type="hidden" name="token"  value="{{csrf_token('myform')}}">
+
+                                            <input type="hidden" name="amount"  value="100">
+
+                                            <button class="btn-box">
+                                            <span style="color: white;">Pay with paypal</span>
+                                            </button>
+                                    </form> 
+
+{% endblock %}

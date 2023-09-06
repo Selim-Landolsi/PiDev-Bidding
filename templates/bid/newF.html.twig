@@ -1,0 +1,13 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}{% endblock %}   
+
+{% block body %}
+    
+    <h1>Create new Bid</h1>
+
+    {{ include('bid/_form.html.twig') }}
+
+    <a href="{{ path('app_home') }}">back to list</a>
+    
+{% endblock %}

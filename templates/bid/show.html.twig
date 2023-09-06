@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<title>Bid</title>
+
+{% block body %}
+    <h1>Bid</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bid.id }}</td>
+            </tr>
+            <tr>
+                <th>BidAmount</th>
+                <td>{{ bid.bidAmount }}</td>
+            </tr>
+            <tr>
+                <th>EntryDate</th>
+                <td>{{ bid.entryDate ? bid.entryDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EntryTime</th>
+                <td>{{ bid.entryTime ? bid.entryTime|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ProdID</th>
+                <td>{{ bid.produit.id }}</td>
+            </tr>
+            <tr>
+                <th>UserID</th>
+                <td>{{ bid.user.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ bid.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bid_index') }}">back to list</a>
+
+    <a href="{{ path('app_bid_edit', {'id': bid.id}) }}">edit</a>
+    <form action="{{path('app_payment')}}" method="post">
+
+                                            <input type="hidden" name="token"  value="{{csrf_token('myform')}}">
+
+                                            <input type="hidden" name="amount"  value="100">
+
+                                            <button class="btn-box">
+                                            <span style="color: white;">Pay with paypal</span>
+                                            </button>
+                                    </form> 
+    {{ include('bid/_delete_form.html.twig') }}
+{% endblock %}
