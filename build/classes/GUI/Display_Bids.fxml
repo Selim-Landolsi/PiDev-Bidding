@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="AnchorPane" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DisplayBidsController">
+   <children>
+      <Button layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#go_back" prefHeight="16.0" prefWidth="62.0" text="Go Back" />
+      <TableView fx:id="list_bids" layoutX="138.0" layoutY="39.0" prefHeight="509.0" prefWidth="712.0">
+        <columns>
+          <TableColumn fx:id="id_bid_col" prefWidth="81.0" text="id_bid" />
+          <TableColumn fx:id="id_user_col" prefWidth="89.0" text="id_user" />
+          <TableColumn fx:id="id_listing_col" prefWidth="89.0" text="id_listing" />
+          <TableColumn fx:id="bid_amount_col" prefWidth="103.0" text="bid_amount" />
+          <TableColumn fx:id="entry_date_col" prefWidth="93.0" text="entry_date" />
+          <TableColumn fx:id="entry_time_col" minWidth="3.0" prefWidth="87.0" text="entry_time" />
+          <TableColumn fx:id="active_duration_col" prefWidth="108.0" text="active_duration" />
+          <TableColumn fx:id="type_col" minWidth="0.0" prefWidth="88.0" text="type" />
+        </columns>
+      </TableView>
+       <Button layoutX="862.0" layoutY="14.0" mnemonicParsing="false" onAction="#app_close" text="X" />
+      <Button fx:id="delete_button" layoutX="33.0" layoutY="71.0" mnemonicParsing="false" onAction="#DeleteBid" text="Supprimer" />
+      <Button fx:id="modify_button" layoutX="38.0" layoutY="224.0" mnemonicParsing="false" onAction="#ModifyBid" text="Modifier" />
+       <ChoiceBox fx:id="bid_type" layoutX="44.0" layoutY="269.0" prefHeight="25.0" prefWidth="54.0" />
+      <Label layoutX="158.0" layoutY="561.0" prefHeight="25.0" prefWidth="520.0" text="Tip : Click on the bid than on either the delete button or the modify button for the desired input" textAlignment="CENTER" />
+   </children>
+   <stylesheets>
+      <URL value="@../Style/style.css" />
+      <URL value="@../Style/styleTextField.css" />
+   </stylesheets>
+</AnchorPane>

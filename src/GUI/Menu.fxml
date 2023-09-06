@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="205.0" prefWidth="223.0" text="Menu" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="146.0" layoutY="46.0" mnemonicParsing="false" onAction="#OpenBid" text="→" />
+            <Button layoutX="146.0" layoutY="100.0" mnemonicParsing="false" onAction="#OpenExchange" text="→" />
+            <Label layoutX="48.0" layoutY="50.0" text="Bid Menu" />
+            <Label layoutX="31.0" layoutY="104.0" text="Exchange Menu" />
+         </children>
+         <stylesheets>
+            <URL value="@../Style/style.css" />
+            <URL value="@../Style/styleTextField.css" />
+         </stylesheets></AnchorPane>
+  </content>
+</TitledPane>

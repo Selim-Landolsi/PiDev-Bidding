@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="588.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DisplayExchangesController">
+    <children>
+        <Button layoutX="13.0" layoutY="549.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="16.0" prefWidth="62.0" text="Go Back" />
+        <TableView fx:id="list_exchanges" layoutX="127.0" layoutY="52.0" prefHeight="509.0" prefWidth="712.0">
+            <columns>
+                <TableColumn fx:id="id_exchange_col" prefWidth="81.0" text="id_exchange" />
+                <TableColumn fx:id="id_listing_1_col" prefWidth="89.0" text="id_listing_1" />
+                <TableColumn fx:id="id_user_1_col" prefWidth="89.0" text="id_user_1" />
+                <TableColumn fx:id="id_listing_2_col" prefWidth="103.0" text="id_listing_2" />
+                <TableColumn fx:id="id_user_2_col" prefWidth="93.0" text="id_user_2" />
+                <TableColumn fx:id="offer_status_col" minWidth="3.0" prefWidth="87.0" text="offer_status" />
+                <TableColumn fx:id="date_created_col" prefWidth="108.0" text="date_created" />
+                <TableColumn fx:id="value_diff_col" minWidth="0.0" prefWidth="88.0" text="value_diff" />
+            </columns>
+        </TableView>
+        <Button layoutX="821.0" layoutY="8.0" mnemonicParsing="false" onAction="#app_close" text="X" />
+        <Button fx:id="delete_button" layoutX="28.0" layoutY="81.0" mnemonicParsing="false" onAction="#DeleteExchange" text="Supprimer" />
+        <Button fx:id="modify_button" layoutX="33.0" layoutY="225.0" mnemonicParsing="false" onAction="#ModifyExchange" text="Modifier" />
+        <ChoiceBox fx:id="offer_status" layoutX="39.0" layoutY="268.0" prefHeight="25.0" prefWidth="54.0" />
+        <Label layoutX="158.0" layoutY="561.0" prefHeight="25.0" prefWidth="520.0" text="Tip : Click on the bid than on either the delete button or the modify button for the desired input" textAlignment="CENTER" />
+    </children>
+    <stylesheets>
+        <URL value="@../Style/style.css" />
+        <URL value="@../Style/styleTextField.css" />
+    </stylesheets>
+</AnchorPane>
