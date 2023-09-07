@@ -72,13 +72,17 @@ class BidController extends AbstractController
             $bidRepository->save($bid, true);
 
             return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
-            }else{ return $this->render('operation/error.html.twig',
-            [
+            }else{ return $this->render('home/show.html.twig',
+            ['bid' => $bid,
+            'produit' => $produit,
+            'form' => $form,
               'message'=>'Bid Higher:'.strval($bidRepository->highestBid($bid->getProduit()->getId()))
             ]
             ); }}
-            else{ return $this->render('operation/error.html.twig',
-                [
+            else{ return $this->render('home/show.html.twig',
+                ['bid' => $bid,
+                'produit' => $produit,
+                'form' => $form,
                   'message'=>'Bid Higher:'.strval($produit->getPrixDebutEnchere())
                 ]
                 ); }

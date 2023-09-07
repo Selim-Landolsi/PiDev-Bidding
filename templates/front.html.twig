@@ -15,6 +15,23 @@
     <meta name="author" content="" />
 
     <title>FORSA TOU3AD</title>
+{% block css %}
+<style>
+.btn-lnk:link, .btn-lnk:visited {
+  background-color: #586380;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 10px;
+  border-radius: 10px;
+}
+
+.btn-lnk:hover, .btn-lnk:active {
+  background-color: #6879a6;
+}
+</style>
 
     <!-- slider stylesheet -->
     <link
@@ -24,7 +41,7 @@
     />
 
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
 
     <!-- fonts style -->
     <link
@@ -32,9 +49,10 @@
       rel="stylesheet"
     />
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../../css/style.css" rel="stylesheet" />
     <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="../../css/responsive.css" rel="stylesheet" />
+    {% endblock %}
   </head>
 
   <body>
@@ -68,7 +86,8 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ path('prod', {'id': 1}) }}"> Produits </a>
+                   <!--  <a class="nav-link" href="{{ path('prod', {'id': 1}) }}"> Produits </a>-->
+                   <a class="nav-link" href="{{ path('app_prod_index') }}"> Produits </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="shop.html"> Shop </a>
@@ -343,8 +362,8 @@ Faire estimer un objet, Trouver une journée d'expertise
     </section>
     <!-- footer section -->
 
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../js/custom.js"></script>
   </body>
 </html>

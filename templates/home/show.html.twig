@@ -1,0 +1,65 @@
+{% extends 'front.html.twig' %}
+
+{% block body %}
+<!DOCTYPE html>
+
+<title>Produit {{ produit.id }}</title>
+    <h1>Produit {{ produit.id }}</h1>
+<span class="m">{{message}}</span>
+
+                 <style>
+                     .m
+                    {
+                        position: sticky;
+                        width: 100px;
+                        left: 25px;
+                        top: 32px;
+                        font-size: x-large;
+                        background: cornsilk
+                    }
+                 </style>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Owner</th>
+                <td>{{ produit.user.userName }}</td>
+            </tr>
+            <tr>
+                <th>Start_Price</th>
+                
+                <td>{{ produit.prixDebutEnchere }}</td>
+            </tr>
+            <tr>
+                <th>Buyout_Price</th>
+                <td>{{ produit.prixBuyOut }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ produit.description }}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{{ produit.etat }}</td>
+            </tr>
+        </tbody>
+    </table>
+<a class="btn-lnk" href="{{ path( 'bid_f', {'id': produit.id })}}">Bid</a>
+    <a class="btn-lnk" href="{{ path('app_prod_index') }}">back to list</a>
+
+    
+    <form action="{{path('app_payment')}}" method="post">
+
+                                            <input type="hidden" name="token"  value="{{csrf_token('myform')}}">
+
+                                            <input type="hidden" name="amount"  value="{{produit.prixBuyOut}}"DT>
+
+                                            <button  style="background-color: #586380; color: white;padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;margin: 10px 10px;border-radius: 10px;">
+                                            <span style="color: white;">Buyout with paypal</span>
+                                            </button>
+                                    </form> 
+    
+{% endblock %}

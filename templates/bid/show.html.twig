@@ -1,8 +1,10 @@
+{% extends 'back.html.twig' %}
+
+
+{% block body %}
 <!DOCTYPE html>
 
 <title>Bid</title>
-
-{% block body %}
     <h1>Bid</h1>
 
     <table class="table">
@@ -45,10 +47,10 @@
 
                                             <input type="hidden" name="token"  value="{{csrf_token('myform')}}">
 
-                                            <input type="hidden" name="amount"  value="100">
+                                            <input type="hidden" name="amount"  value="{{bid.produit.prixBuyout}}"DT>
 
                                             <button class="btn-box">
-                                            <span style="color: white;">Pay with paypal</span>
+                                            <span style="color: white;">Buyout with paypal</span>
                                             </button>
                                     </form> 
     {{ include('bid/_delete_form.html.twig') }}
